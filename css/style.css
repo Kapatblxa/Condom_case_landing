@@ -1,0 +1,190 @@
+@font-face {
+	font-family: helvetica-light;
+	src: url(../fonts/HelveticaLight/HelveticaLight.woff)
+}
+body, html, head {
+    width:100%;
+    height:100%;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+
+.choice-condom1, .choice-condom2, .choice-condom3, .choice-condom4, .choice-condom5, .choice-condom6 {
+    width:26%;
+    height:26%;
+/*    background: rgba(255, 255, 255, 0.1);*/
+    transition: transform linear 0.1s;
+}
+
+.choice-condom1:hover {
+    width:26%;
+    height:26%;
+/*    background: rgba(255, 255, 255, 0.25);*/
+/*    transform:scale(1.05);    */
+}
+.choice-condom2:hover {
+    width:26%;
+    height:26%;
+    background: rgba(255, 255, 255, 0.25);
+    transform:scale(1.05);
+}
+
+.choice-box {
+    width: 100vw;
+    background: black;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.home-logo {
+	width: 100vw;
+	height: 100vh;
+	background: black;
+
+}
+
+
+
+.container-logo {
+	height:100%;
+    width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+/*	padding-top: 2.7%;*/
+	width: 20rem;
+/*	height: 20%;*/
+}
+
+.circle {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 15rem;
+	height: 15rem;
+	border-radius: 50%;
+	border: 0.5rem solid white;
+	box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
+
+}
+.circle-inset {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 15rem;
+	height: 15rem;
+	border-radius: 50%;
+	border: 0.5rem solid white;
+	box-shadow: inset 0 0 1rem rgba(255, 255, 255, 0.5);
+
+}
+
+.header {
+
+}
+
+.menu-elmt {
+	color: rgba(255,255,255,0.2);
+	font-size: 1rem;
+	font-family: helvetica-light;
+	letter-spacing: 0.07rem;
+
+}
+.menu-elmt:hover {
+	transition: 0.5s;
+	color: rgba(255,255,255,0.7);
+}
+.menu-elmt:not(:hover) {
+  transition: 0.5s;
+}
+
+
+/*
+background: -moz-linear-gradient(top, rgba(252,146,148,1) 0%, rgba(193,74,78,1) 100%);
+background: -webkit-linear-gradient(top, rgba(252,146,148,1) 0%,rgba(193,74,78,1) 100%);
+background: linear-gradient(to bottom, rgba(252,146,148,1) 0%,rgba(193,74,78,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc9294', endColorstr='#c14a4e',GradientType=0 );
+*/
+.menu {
+	position: absolute;
+	width: 75%;
+	left: 12.5%;
+	height: 10%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+.conveniance-slide {
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../pic/conveniance.jpg);
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.conveniance-slide-img {
+	width:100%;
+}
+
+
+.image-container {
+/*    margin-left: 25%; */
+    width: 100%;
+/*    width: 100%;*/
+    height: 100%;
+    background-image: url(../pic/trial.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    float: left;
+}
+
+/*
+.image-container:hover {
+    margin-left: 25%;
+    width: 50%;
+}
+*/
+
+.description-container {
+    width:50%;
+    height: 100%;
+    float: left;
+    color:white;
+    font-size: 24px;
+/*    display: none;*/
+}
+
+.condoms-input {
+	text-align: center;
+    height: 80%;
+    width: 80%;
+    color:red;
+    background: none;
+    font-size: 150px;
+/*    border: none;*/
+}
+
+.condom-set {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
