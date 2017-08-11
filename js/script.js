@@ -1,38 +1,32 @@
 
-//Internal
-let order = new order {
-	adress = "";
-	condoms = [];
-	condomsQuantity = [];
+
+function setInput(x) {
+	let condomsQuantity = document.querySelector('.condom-set${x}');
+
+	//Actions on input
+	condomsQuantity.addEventListener('click', condomsCount);
+	function condomsCount() {
+	//Condoms quantity input. Element creation.
+		//click action
+		let quantity = document.createElement(`input`); //Области видимости. Сделай quantity видимой для строки№ 31
+		quantity.className = '.condoms-input';
+		quantity.setAttribute('type', 'number')
+		quantity.setAttribute('placeholder', '0')
+		quantity.className = ('condoms-input');
+		if (condomsQuantity.childNodes.length >= 1) {}
+			else {
+		condomsQuantity.appendChild(quantity);
+		}
+	}
+		//mouseout action
+	condomsQuantity.addEventListener('mouseout', condomsCountZero);
+	function condomsCountZero() {
+		let searchQuantity = document.querySelector('.condoms-input');
+			if (searchQuantity.value === '0') {
+				searchQuantity.remove();
+			}
+	}
 }
-
-let condomsQuantity = document.querySelector('.condom-set');
-
-let quantity = document.createElement(`input`);
-quantity.className = '.condoms-input';
-quantity.setAttribute('type', 'number')
-quantity.setAttribute('placeholder', '0')
-
-condomsQuantity.addEventListener('mousedown', condomsCount);
-
-//Добавить еще один addEvent с функцией focus в созданный input
-quantity.className = ('condoms-input');
-
-function condomsCount() {
-	condomsQuantity.textContent = 0;
-	condomsQuantity.appendChild(quantity);
-}
-condomsQuantity.addEventListener('mousedown', condomsFocus);
-//condomsQuantity.addEventListener('focus', condomsCount);
-console.dir(condomsQuantity);
-
-//must be return
-//input must be placed in <form>
-
-//External
-
-
-
 
 
 //ПРоверка на ввод числа а не текста!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

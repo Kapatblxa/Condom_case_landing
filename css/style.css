@@ -45,10 +45,7 @@ body, html, head {
 	width: 100vw;
 	height: 100vh;
 	background: black;
-
 }
-
-
 
 .container-logo {
 	height:100%;
@@ -177,6 +174,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc9294', end
 }
 
 .condom-set {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.condom-set2 {
     display: flex;
     justify-content: center;
     align-items: center;
