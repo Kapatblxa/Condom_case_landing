@@ -1,8 +1,21 @@
-
-
 let timerId;
-let condomsModel = ['condom1', 'condom2','condom3','condom4','condom5','condom6'];
-let condomsCount = [0,0,0,0,0,0];
+// let condomsModel = ['condom1', 'condom2','condom3','condom4','condom5','condom6'];
+// let condomsCount = [0,0,0,0,0,0];
+//let condoms = [
+//	{model: 'condom1', count: 0},
+//	{model: 'condom2', count: 0},
+//	{model: 'condom3', count: 0},
+//	{model: 'condom4', count: 0},
+//	{model: 'condom5', count: 0},
+//	{model: 'condom6', count: 0}
+//]
+let condoms = [];
+
+const dataCondomModel = document.querySelectorAll('[data-condom-model]');
+for (i=0; i < dataCondomModel.length; i++) {
+ condoms.push({model: 'condom' + i, count: 0});
+}
+debugger
 
 let condomSet0 = document.querySelector('.condom-set0');
 let condomSet1 = document.querySelector('.condom-set1');
@@ -43,10 +56,9 @@ function setInput(x) {
 			searchInput.addEventListener('mouseout', condomsCountZero);
 			function condomsCountZero(event) {
 				let target = event.target;
-				if (target.value === '0') {
+				if (target.value === '0' || target.value === '') {
 							setTimeout(function() {target.remove()}, 1500);
 							} else {}
-//				console.log(condomsCount);
 			}
 
 
