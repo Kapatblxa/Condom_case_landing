@@ -9,55 +9,59 @@
 //	{model: 'condom6', count: 0}
 //]
 (function() {
-	//let condomsContainerElem
 	let condomsElems = null;
 	let condoms = null;
 
 	init();
 
 	function init() {
-		//condomsContainerElem = document.getElementById('condomsContainer')
-		condomsElems = getCondomElements()
-		condoms = createCondoms()
+		condomsElems = getCondomElements();
+		condoms = createCondoms();
 
-		initEventListeners()
+		initEventListeners();
 	}
 
 	function initEventListeners() {
 		const condomsContainerElem = document.getElementById('condomsContainer');
-		const condomsQuantity = document.querySelector('.condom-set');
 		condomsContainerElem.addEventListener('mouseover', mouseOverHadler);
 		condomsContainerElem.addEventListener('click', clickHandler);
-		condomsQuantity.addEventListener('click', clickCreateInput);
+		condomsContainerElem.addEventListener('click', inputsQuantityCheck);	//input appear action
+		condomsContainerElem.addEventListener('mouseout', inputDisappear);	//input disappear action
 	}
 
+	function inputDisappear(event) {
+				let target = event.target;
+				if (target.value === '0' || target.value === '') {
+							setTimeout(function() {target.remove()}, 1500);
+							} else {};
+		}
+
 	function clickCreateInput() {
-		let quantity = document.createElement(`input`);
+		const quantity = document.createElement(`input`);
 		quantity.className = '.condoms-input';
-		quantity.setAttribute('type', 'number')
-		quantity.setAttribute('placeholder', '0')
+		quantity.setAttribute('type', 'number');
+		quantity.setAttribute('placeholder', '0');
 		quantity.className = ('condoms-input');
+		return quantity;
+	}
+
+	function inputsQuantityCheck(event) {
+		const condomsQuantity = event.target.closest('.condom-set');
+		if (condomsQuantity === null) return;
 		if (condomsQuantity.childNodes.length >= 1) {}
 			else {
-			this.appendChild(quantity);
+			condomsQuantity.appendChild(clickCreateInput());
 		}
 	}
 
 	function mouseOverHadler(event) {
-		const condomElem = event.target.closest('.condom-set')
-
+		const condomElem = event.target.closest('.condom-set');
 		if (condomElem === null) return;
-
-		console.log('Only condom element');
-		console.log(condoms);
 	}
 
 	function clickHandler(event) {
-		const condomElem = event.target.closest('.condom-set')
-
+		const condomElem = event.target.closest('.condom-set');
 		if (condomElem === null) return;
-
-
 	}
 
 	function getCondomElements() {
@@ -66,15 +70,16 @@
 
 	function createCondoms() {
 		const condoms = [];
-
 		for (i=0; i < condomsElems.length; i++) {
 			const condomModel = condomsElems[i].dataset.condomModel;
 			condoms.push({model: condomModel, count: 0});
 		};
-
-		return condoms
+		return condoms;
 	}
 })()
+
+
+
 
 //let condomSet0 = document.querySelector('.condom-set');
 //let condomSet1 = document.querySelector('.condom-set1');
@@ -97,16 +102,7 @@
 
 
 //		clickCreateInput[x] = quantity.value;}  //Здесь надо записать введенное значение в массив clickCreateInput
-	}
-		//mouseout action
-		let searchInput = document.querySelector('.choice-box');
-			searchInput.addEventListener('mouseout', clickCreateInputZero);
-			function clickCreateInputZero(event) {
-				let target = event.target;
-				if (target.value === '0' || target.value === '') {
-							setTimeout(function() {target.remove()}, 1500);
-							} else {}
-			}
+//	}
 
 
 
