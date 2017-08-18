@@ -8,6 +8,7 @@ body, html, head {
 	margin: 0;
 	padding: 0;
 	font-size: 14px;
+	font-family: helvetica-light;
 }
 
 input {outline:none;}
@@ -17,6 +18,7 @@ input {outline:none;}
     height:26%;
 /*    background: rgba(255, 255, 255, 0.1);*/
     transition: transform linear 0.1s;
+	z-index: 1
 }
 
 .choice-condom:hover {
@@ -28,7 +30,7 @@ input {outline:none;}
 .choice-condom2:hover {
     width:26%;
     height:26%;
-    background: rgba(255, 255, 255, 0.25);
+/*    background: rgba(255, 255, 255, 0.25);*/
     transform: scale(1.05);
 }
 
@@ -128,7 +130,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc9294', end
 .conveniance-slide {
 	width: 100vw;
 	height: 100vh;
-	background-image: url(../pic/conveniance.jpg);
+	background-image: url(../pic/conveniance.png);
 	background-position: center;
 	background-size: cover;
 	overflow: hidden;
@@ -148,6 +150,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc9294', end
     background-position: center;
     position: relative;
     float: left;
+	z-index: 1;
 }
 
 .image-container1 {
@@ -240,28 +243,117 @@ input::-webkit-inner-spin-button {
 
 .delivery {
 	width: 100vw;
-	height: 60vh;
-	background: black;
+	height: 100vh;
+	background-image: url(../pic/shkatulka.png);
+	background-size: cover;
 }
 
 .delivery-forms {
-	background: #050505;
+	background: rgba(0, 0, 0, 0.45);
 	border-radius: 0.3rem;
-	border: 1px solid black;
+	border: 1px solid rgba(0, 0, 0, 0.45);
 	height: 5vh;
-    width: 35vw;
+    width: 60%;
+	color:rgb(255, 255, 255);
+/*	text-shadow: 0 0 1rem rgba(255, 255, 255, 0.2);*/
+	font-size: 1rem;
+	padding-left: 2%;
+	margin-left: 3%;
+	word-wrap: break-word;
+	line-height:2rem;
+}
+
+.delivery-forms:hover {
+	background: rgba(10, 10, 10, 0.45);
+	color:rgb(255, 255, 255);
+	text-shadow: 0 0 1rem rgba(255, 255, 255, 0.2);
+
 }
 
 .forms-position {
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-wrap: wrap;
-	height: 100%;
-	color: #3b3b3b;
+    justify-content:flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #3b3b3b;
+    width: 30%;
+    height: 75%;
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+/*	font-size: 0.5rem;*/
+    font-family: helvetica-light;
+    font-weight: 100;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 1% 1% 0 0;
 }
 
 .delivery-forms-coment {
-	width: 60vw;
+	width: 91%;
 	height: 25vh;
+	word-wrap: break-word;
+	word-break: break-all;
+	white-space: normal;
+}
+
+.container {
+	background-color: rgba(0,0,0,0.7);
+	height: 100%;
+	position: relative;
+
+	display: flex;
+	align-items: stretch;
+}
+
+::-webkit-input-placeholder {color:rgba(255, 255, 255, 0.4);font-family: helvetica-light;}
+::-moz-placeholder          {color:rgba(255, 255, 255, 0.4);font-family: helvetica-light;}
+:-moz-placeholder           {color:rgba(255, 255, 255, 0.4);font-family: helvetica-light;}
+:-ms-input-placeholder      {color:rgba(255, 255, 255, 0.4);font-family: helvetica-light;}
+.image-container5 {
+	width: 100%;
+    height: 100%;
+    background-image: url(../pic/vanish.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    float: left;
+}
+
+
+
+.choice-condom-img {
+	height: 100%;
+}
+
+
+.poster{
+    position:relative;
+/*
+    margin:100px auto;
+    background:#ff6600;
+    height:200px;
+    width:150px;
+*/
+}
+.descr{
+    display:none;
+    margin-left:82%;
+/*    padding:10px;*/
+/*    margin-top:17px;*/
+    background:#f3f3f3;
+    height:100%;
+/*
+    -moz-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    box-shadow:0 5px 5px rgba(0,0,0,0.3);
+*/
+}
+.poster:hover .descr{
+    display:block;
+    position:absolute;
+/*    top:120px;*/
+    z-index: 9999;
+    width:400px;
+	background: grey;
 }
